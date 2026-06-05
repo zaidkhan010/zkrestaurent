@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZK Restaurant</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background:#141e30;
+    color:white;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:#0f172a;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#ffb703;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#ffb703;
+}
+
+/* HERO SECTION */
+.hero{
+    height:90vh;
+    background:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero-content{
+    background:rgba(0,0,0,0.6);
+    padding:40px;
+    border-radius:20px;
+}
+
+.hero h1{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+.hero button{
+    padding:12px 25px;
+    border:none;
+    background:#ffb703;
+    color:black;
+    font-size:18px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.hero button:hover{
+    transform:scale(1.05);
+}
+
+/* MENU */
+.section-title{
+    text-align:center;
+    font-size:40px;
+    margin:50px 0 20px;
+}
+
+.menu{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    padding:30px;
+}
+
+.card{
+    background:#1e293b;
+    border-radius:15px;
+    overflow:hidden;
+    transition:0.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.4);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+    text-align:center;
+}
+
+.food-name{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.price{
+    color:#ffb703;
+    font-size:20px;
+    margin-bottom:15px;
+}
+
+.card button{
+    padding:10px 20px;
+    border:none;
+    background:#ffb703;
+    color:black;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:30px;
+}
+
+.gallery img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+/* ORDER FORM */
+.order-section{
+    padding:40px 20px;
+}
+
+form{
+    max-width:500px;
+    margin:auto;
+    background:#1e293b;
+    padding:30px;
+    border-radius:15px;
+}
+
+form input,
+form textarea,
+form select{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:8px;
+}
+
+form button{
+    width:100%;
+    padding:12px;
+    background:#ffb703;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+/* CONTACT */
+.contact{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.contact p{
+    margin:10px 0;
+    font-size:18px;
+}
+
+.call-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 20px;
+    background:#ffb703;
+    color:black;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+    background:#0f172a;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+nav{
+    flex-direction:column;
+    gap:10px;
+}
+
+.hero h1{
+    font-size:35px;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">🍽️ ZK Restaurant</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#order">Order</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Welcome to ZK Restaurant</h1>
+        <p>Delicious Food • Fast Delivery • Premium Taste</p>
+
+        <a href="#menu">
+            <button>View Menu</button>
+        </a>
+    </div>
+</section>
+
+<!-- MENU -->
+<h2 class="section-title" id="menu">OUR PREMIUM MENU</h2>
+
+<div class="menu">
+
+<div class="card">
+<img loading="lazy" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<div class="food-name">Pizza</div>
+<div class="price">₹299</div>
+<a href="https://wa.me/917935678986"><button>Order Now</button></a>
+</div>
+</div>
+
+<div class="card">
+<img loading="lazy" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<div class="food-name">Burger</div>
+<div class="price">₹199</div>
+<a href="https://wa.me/917935678986"><button>Order Now</button></a>
+</div>
+</div>
+
+<div class="card">
+<img loading="lazy" src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<div class="food-name">Pasta</div>
+<div class="price">₹249</div>
+<a href="https://wa.me/917935678986"><button>Order Now</button></a>
+</div>
+</div>
+
+<div class="card">
+<img loading="lazy" src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<div class="food-name">Sandwich</div>
+<div class="price">₹149</div>
+<a href="https://wa.me/917935678986"><button>Order Now</button></a>
+</div>
+</div>
+
+</div>
+
+<!-- GALLERY -->
+<h2 class="section-title" id="gallery">FOOD GALLERY</h2>
+
+<div class="gallery">
+<img loading="lazy" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop">
+<img loading="lazy" src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1200&auto=format&fit=crop">
+<img loading="lazy" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=1200&auto=format&fit=crop">
+<img loading="lazy" src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1200&auto=format&fit=crop">
+</div>
+
+<!-- ORDER FORM -->
+<section class="order-section" id="order">
+<h2 class="section-title">ONLINE ORDER</h2>
+
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="tel" placeholder="Phone Number" required>
+<select required>
+<option>Select Food</option>
+<option>Pizza</option>
+<option>Burger</option>
+<option>Pasta</option>
+<option>Sandwich</option>
+</select>
+<textarea rows="5" placeholder="Your Address"></textarea>
+<button type="submit">Place Order</button>
+</form>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+<h2 class="section-title">CONTACT US</h2>
+
+<p>📞 7935678986</p>
+<p>📍 Mumbai, Sion Dharavi - 400017</p>
+
+<a class="call-btn" href="tel:7935678986">Call Now</a>
+</section>
+
+<!-- GOOGLE MAP -->
+<div style="padding:20px;">
+<iframe
+src="https://www.google.com/maps?q=Mumbai%20Sion%20Dharavi&output=embed"
+width="100%"
+height="350"
+style="border:0;border-radius:15px;"
+allowfullscreen=""
+loading="lazy">
+</iframe>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 ZK Restaurant | All Rights Reserved</p>
+</footer>
+
+
+```
+
+<h1>## Features Added </h1> <br>
+
+<h3>* Real food images  </h3>  <br>
+<h3>* Footer  </h3> <br>
+<h3>   * Google Maps </h3>  <br>
+<h3>* Online order form </h3>  <br>
+<h3>* Mobile responsive layout </h3> <br>
+<h3>* Faster image loading optimization </h3>   <br>
+<h3>* WhatsApp order buttons</h3>  <br>
+<h3>* Sticky navbar  </h3>  <br>
+<h3>* Professional UI </h3>   <br>
+<h3>* Payment    <br> </h3>
+<h3>* Admin panel design </h3> <br>
+
+
+
+<a href="https://wa.me/917935678986?text=Hello%20ZK%20Restaurant%2C%20I%20want%20to%20order%20food"
+target="_blank">
+
+<button class="whatsapp-btn">
+📱 Order on WhatsApp
+</button>
+
+</a>
+
+
+
+<section style="text-align:center;padding:40px;">
+
+<h2>💳 Pay Online</h2>
+
+<a href="https://rzp.io/l/demo-payment">
+<button style="padding:14px 25px;
+background:#ffb703;
+border:none;
+border-radius:10px;
+font-size:18px;
+cursor:pointer;
+font-weight:bold;">
+Pay Now
+</button>
+</a>
+
+</section>
+
+
+
+<section style="padding:40px;background:#0f172a;">
+
+<h2 style="text-align:center;margin-bottom:30px;">
+📊 Admin Dashboard
+</h2>
+
+<div style="display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;">
+
+<div style="background:#1e293b;padding:25px;border-radius:15px;text-align:center;">
+<h3>Total Orders</h3>
+<p style="font-size:30px;color:#ffb703;">120</p>
+</div>
+
+<div style="background:#1e293b;padding:25px;border-radius:15px;text-align:center;">
+<h3>Total Revenue</h3>
+<p style="font-size:30px;color:#38ef7d;">₹45,000</p>
+</div>
+
+<div style="background:#1e293b;padding:25px;border-radius:15px;text-align:center;">
+<h3>Customers</h3>
+<p style="font-size:30px;color:#00c6ff;">350</p>
+</div>
+
+</div>
+
+</section>
+
+
+<h1># Future Upgrades You Can Add</h1>
+
+<h3>* Login system <br> </h3>
+<h3>* Real cart system<br> </h3>
+<h3>* Database connection<br> </h3>
+<h3>* Customer reviews<br> </h3>
+<h3>* Email notifications<br> </h3>
+<h3>* Live order tracking<br> </h3>
+<h3>* Dark/light mode<br> </h3>
+<h3>* QR code payments<br> </h3> 
+<style>
+
+.thank-you{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+
+    background: linear-gradient(
+        90deg,
+        red,
+        orange,
+        yellow,
+        green,
+        cyan,
+        blue,
+        purple
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-top: 40px;
+}
+
+</style>
+<h1 class="thank-you">
+THANK YOU FOR VISIT OUR ZK RESTAURANT WEBSITE
+</h1>
+</body>
+</html>
